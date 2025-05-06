@@ -1,0 +1,7 @@
+for _,v in pairs(game.Players:GetChildren()) do
+    for i,z in pairs(v.Backpack:GetChildren()) do
+        if z.name == "Handboeien" then
+            z.Parent = game.Players.LocalPlayer.Backpack
+        end
+    end
+end
