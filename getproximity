@@ -1,0 +1,29 @@
+while task.wait(1) do
+	for _, v in pairs(game.Players:GetPlayers()) do
+		if v.Name ~= game.Players.LocalPlayer.Name and v.Character and v.Character:FindFirstChild("Torso") and v.Character.Torso:FindFirstChild("CuffProxAttachment") then
+			local Detainedlwd = v.Character:FindFirstChild("Detainedlwd")
+			if Detainedlwd then
+				local Value = Detainedlwd.Value
+				if Value then
+					if LocalPlayer_upvr == Value then
+						local CuffInteraction = v.Character:WaitForChild("Torso"):WaitForChild("CuffProxAttachment"):WaitForChild("CuffInteraction")
+						CuffInteraction.Enabled = true
+						CuffInteraction.ActionText = "Grab"
+					else
+						return
+					end
+				elseif v.Character:FindFirstChild("Inhandboeien").Value == false then
+					local CuffInteraction_3 = v.Character:WaitForChild("Torso"):WaitForChild("CuffProxAttachment"):WaitForChild("CuffInteraction")
+					CuffInteraction_3.Enabled = true
+					CuffInteraction_3.ActionText = "Cuff"
+				else
+					v.Character:WaitForChild("Torso"):WaitForChild("CuffProxAttachment"):WaitForChild("CuffInteraction").Enabled = false
+				end
+			else
+				local CuffInteraction_2 = v.Character:WaitForChild("Torso"):WaitForChild("CuffProxAttachment"):WaitForChild("CuffInteraction")
+				CuffInteraction_2.Enabled = true
+				CuffInteraction_2.ActionText = "Cuff"
+			end
+		end
+	end
+end
