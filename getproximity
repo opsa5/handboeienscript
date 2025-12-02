@@ -9,6 +9,7 @@ while task.wait(1) do
 						local CuffInteraction = v.Character:WaitForChild("Torso"):WaitForChild("CuffProxAttachment"):WaitForChild("CuffInteraction")
 						CuffInteraction.Enabled = true
 						CuffInteraction.ActionText = "Grab"
+                        CuffInteraction_3.HoldDuration = 0
 					else
 						return
 					end
